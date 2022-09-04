@@ -11,9 +11,14 @@ for (let i = 0; i < input.length; i++) {
   }
 }
 
-for (let i = 0; i < numbers.length; i++){
-  let num1 = Number(numbers[i][0]);
-  let num2 = Number(numbers[i][1]);
+let num1 = Number(numbers[0][0]);
+let num2 = Number(numbers[0][1]);
+var sum = num1*num2;
+console.log(sum);
 
-  console.log(num1 + num2);
+if (sum != ''){
+    let num1 = Number(numbers[1][0]);
+    let num2 = Number(numbers[1][1]);
+    var sum = num1*num2;
+    console.log(sum);
 }
