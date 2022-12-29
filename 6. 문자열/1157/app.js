@@ -20,11 +20,23 @@ const values = Object.values(array);
 // 배열 result에 중복된 값이 있는지 확인하기
 let hasDuplicates = new Set(values).size != values.length;
 
+//최댓값
+const max = Math.max(...values);
+
+//중복된 values로 이루어진 배열 'duplicates'
+const findDuplicates = (values) =>
+  values.filter((item, index) => values.indexOf(item) !== index);
+const duplicates = findDuplicates(values);
+
+// value가 최댓값인 key 구하기
+const key = keys.find((key) => result[key] === max);
+
 if (hasDuplicates) {
-  console.log("?");
+  if (duplicates.includes(max)) {
+    console.log("?");
+  } else {
+    console.log(key);
+  }
 } else {
-  // value가 최댓값인 key 구하기
-  const max = Math.max(...values);
-  const key = keys.find((key) => result[key] === max);
   console.log(key);
 }
